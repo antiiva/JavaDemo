@@ -7,7 +7,7 @@ public class HelloWorld {
 		System.out.println("Enter your name: ");
 		Scanner scan = new Scanner(System.in);
 		String s = scan.next();
-		System.out.println("Hello, " + s + ", from Eclipse!");
+		System.out.println("Hello, " + s + ", from secondary Eclipse!");
 	}
 
 }
