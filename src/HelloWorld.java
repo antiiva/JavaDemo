@@ -8,6 +8,7 @@ public class HelloWorld {
 		Scanner scan = new Scanner(System.in);
 		String s = scan.next();
 		System.out.println("Hello, " + s + ", from Eclipse!");
+		System.out.println("This is the third branch version!");
 	}
 
 }
