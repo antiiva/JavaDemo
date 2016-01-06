@@ -1,0 +1,175 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 8192 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=16904, tid=11456
+#
+# JRE version:  (8.0_40-b26) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.40-b25 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000027f800):  JavaThread "main" [_thread_in_vm, id=11456, stack(0x00000000023c0000,0x00000000024c0000)]
+
+Stack: [0x00000000023c0000,0x00000000024c0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x32b47a]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.Throwable.<clinit>()V+31
+v  ~StubRoutines::call_stub
+j  sun.misc.Unsafe.registerNatives()V+0
+j  sun.misc.Unsafe.<clinit>()V+0
+v  ~StubRoutines::call_stub
+j  java.util.concurrent.atomic.AtomicInteger.<clinit>()V+0
+v  ~StubRoutines::call_stub
+j  java.lang.ThreadLocal.<clinit>()V+0
+v  ~StubRoutines::call_stub
+j  java.nio.charset.Charset.<clinit>()V+22
+v  ~StubRoutines::call_stub
+j  java.lang.System.initProperties(Ljava/util/Properties;)Ljava/util/Properties;+0
+j  java.lang.System.initializeSystemClass()V+13
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000057617800 JavaThread "Finalizer" daemon [_thread_blocked, id=16900, stack(0x0000000058890000,0x0000000058990000)]
+  0x0000000057610800 JavaThread "Reference Handler" daemon [_thread_blocked, id=19436, stack(0x0000000058770000,0x0000000058870000)]
+=>0x000000000027f800 JavaThread "main" [_thread_in_vm, id=11456, stack(0x00000000023c0000,0x00000000024c0000)]
+
+Other Threads:
+  0x000000005760b000 VMThread [stack: 0x0000000058600000,0x0000000058700000] [id=15088]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000027cfe0] SymbolTable_lock - owner thread: 0x000000000027f800
+
+Heap:
+ PSYoungGen      total 38400K, used 1331K [0x00000000d5d80000, 0x00000000d8800000, 0x0000000100000000)
+  eden space 33280K, 4% used [0x00000000d5d80000,0x00000000d5eccd80,0x00000000d7e00000)
+  from space 5120K, 0% used [0x00000000d8300000,0x00000000d8300000,0x00000000d8800000)
+  to   space 5120K, 0% used [0x00000000d7e00000,0x00000000d7e00000,0x00000000d8300000)
+ ParOldGen       total 87552K, used 0K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 0% used [0x0000000081800000,0x0000000081800000,0x0000000086d80000)
+ Metaspace       used 1039K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 110K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000011b50000,0x0000000011f50000] byte_map_base: 0x0000000011744000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006fc44040
+ Begin Bits: [0x0000000012940000, 0x00000000148e0000)
+ End Bits:   [0x00000000148e0000, 0x0000000016880000)
+
+Polling page: 0x0000000000260000
+
+CodeCache: size=245760Kb used=403Kb max_used=403Kb free=245356Kb
+ bounds [0x0000000002790000, 0x0000000002a00000, 0x0000000011790000]
+ total_blobs=102 nmethods=0 adapters=76
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.044 loading class java/lang/ThreadLocal done
+Event: 0.044 loading class java/util/concurrent/atomic/AtomicInteger
+Event: 0.044 loading class java/util/concurrent/atomic/AtomicInteger done
+Event: 0.044 loading class java/lang/NoSuchMethodError
+Event: 0.044 loading class java/lang/IncompatibleClassChangeError
+Event: 0.044 loading class java/lang/IncompatibleClassChangeError done
+Event: 0.044 loading class java/lang/NoSuchMethodError done
+Event: 0.044 loading class java/util/ArrayList
+Event: 0.044 loading class java/util/ArrayList done
+Event: 0.044 loading class java/util/Collections
+
+
+Dynamic libraries:
+0x000000013f6d0000 - 0x000000013f707000 	C:\Program Files\Java\jre1.8.0_40\bin\javaw.exe
+0x0000000077800000 - 0x00000000779a9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000775e0000 - 0x0000000077700000 	C:\Windows\system32\kernel32.dll
+0x000007fefd790000 - 0x000007fefd7fc000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff6b0000 - 0x000007feff78b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefdc10000 - 0x000007fefdcaf000 	C:\Windows\system32\msvcrt.dll
+0x000007fefdac0000 - 0x000007fefdadf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefdae0000 - 0x000007fefdc0d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077700000 - 0x00000000777fa000 	C:\Windows\system32\USER32.dll
+0x000007feff830000 - 0x000007feff897000 	C:\Windows\system32\GDI32.dll
+0x000007feff790000 - 0x000007feff79e000 	C:\Windows\system32\LPK.dll
+0x000007feff090000 - 0x000007feff15a000 	C:\Windows\system32\USP10.dll
+0x000007fefbe20000 - 0x000007fefc014000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007feff7b0000 - 0x000007feff821000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe070000 - 0x000007fefe09e000 	C:\Windows\system32\IMM32.DLL
+0x000007feff390000 - 0x000007feff499000 	C:\Windows\system32\MSCTF.dll
+0x000007fefd4e0000 - 0x000007fefd50f000 	C:\Windows\system32\nvinitx.dll
+0x0000000079450000 - 0x0000000079522000 	C:\Program Files\Java\jre1.8.0_40\bin\msvcr100.dll
+0x000000006f440000 - 0x000000006fcc3000 	C:\Program Files\Java\jre1.8.0_40\bin\server\jvm.dll
+0x000007fef8770000 - 0x000007fef8779000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefdf80000 - 0x000007fefdfcd000 	C:\Windows\system32\WS2_32.dll
+0x000007feff7a0000 - 0x000007feff7a8000 	C:\Windows\system32\NSI.dll
+0x000007fefae30000 - 0x000007fefae6b000 	C:\Windows\system32\WINMM.dll
+0x000007fefc310000 - 0x000007fefc31c000 	C:\Windows\system32\VERSION.dll
+0x00000000779d0000 - 0x00000000779d7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000000220000 - 0x000000000022f000 	C:\Program Files\Java\jre1.8.0_40\bin\verify.dll
+0x0000000000230000 - 0x0000000000259000 	C:\Program Files\Java\jre1.8.0_40\bin\java.dll
+0x0000000069650000 - 0x0000000069685000 	C:\Program Files\Java\jre1.8.0_40\bin\jdwp.dll
+0x00000000002a0000 - 0x00000000002a8000 	C:\Program Files\Java\jre1.8.0_40\bin\npt.dll
+0x0000000001ce0000 - 0x0000000001cf6000 	C:\Program Files\Java\jre1.8.0_40\bin\zip.dll
+0x000007fefe0a0000 - 0x000007fefee29000 	C:\Windows\system32\SHELL32.dll
+0x000007feff4a0000 - 0x000007feff6a3000 	C:\Windows\system32\ole32.dll
+0x000007fefd5b0000 - 0x000007fefd5bf000 	C:\Windows\system32\profapi.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:56817 -Dfile.encoding=Cp1251 
+java_command: CheckPassword
+java_class_path (initial): C:\Users\Iva\workspace\JavaDemo\bin
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=c:\Program Files\Java\apache-tomcat-8.0.27\
+CLASSPATH=.;c:\Users\Iva\workspace\;c:\Program Files\Java\mysql-connector-java-3.1.14-bin.jar;c:\Program Files\Java\JUnit\junit-4.12.jar;c:\Program Files\Java\JUnit\hamcrest-core-1.3.jar;c:\Program Files\Java\JUnit
+PATH=C:/Program Files/Java/jre1.8.0_40/bin/server;C:/Program Files/Java/jre1.8.0_40/bin;C:/Program Files/Java/jre1.8.0_40/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files\AuthenTec TrueSuite\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Sony\VAIO Improvement\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;c:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;c:\Program Files (x86)\Common Files\Roxio Shared\OEM\DLLShared\;c:\Program Files (x86)\Common Files\Roxio Shared\OEM\DLLShared\;c:\Program Files (x86)\Common Files\Roxio Shared\OEM\12.0\DLLShared\;c:\Program Files (x86)\Roxio 2010\OEM\AudioCore\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Calibre2\;C:\Program Files\Java\jdk1.8.0_40\bin;C:\mysql\bin;C:\Program Files (x86)\Skype\Phone;c:\Program Files\apache-maven-3.3.3\bin;C:\Program Files (x86)\Skype\Phone\;.;;C:\Program Files\eclipse;;.;;.;
+USERNAME=Iva
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.19045)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8285468k(1794600k free), swap 9307632k(4904k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.40-b25) for windows-amd64 JRE (1.8.0_40-b26), built on Mar  7 2015 13:51:59 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Dec 29 16:57:45 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
